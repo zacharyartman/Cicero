@@ -1,4 +1,16 @@
-# capstone-24-Cicero
+# Cicero Finance - 2024
+# Summary:
+
+This tool was created for my Senior Project class to enable users to upload a financial document, such as a 10-K, and extract particular components. Currently, it focuses on publicly available Dexcom 10-K's to tailor the model to one specific company.
+
+**Key Features:**
+
+- **Natural Language Processing:** Utilizes the spaCy library to highlight specific key terms pertinent to the company.
+- **Summary Generation:** Connects to the OpenAI API to create a summary with components labeled as `good`, `medium`, and `bad`. These summaries may include calculations of income loss compared to previous years.
+- **Highlighting Significant Points:** The API picks out the most significant points that a user might miss when skimming through the document, aiding financial analysts in identifying critical areas for further review.
+
+**Purpose:** This tool assists financial analysts in getting a comprehensive overview of crucial details in financial documents but is not designed to replace a financial analyst.
+
 
 # Initial Setup:
 Generate an OpenAI API Key from [`this link`](https://platform.openai.com/api-keys). Copy it to your clipboard.
