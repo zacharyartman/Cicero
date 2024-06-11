@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Cicero Finance</title>
+</head>
+<body>
+    <div class="main">
+        <p class="headline">Welcome back, Cicero Finance User</p>
+        <div class="stock-steps">
+            <div class="step-1">
+                <div class="subheadline">Step 1: Select Analysis Level</div>
+                <div class="body-text">Choose basic or advanced analysis</div>
+                <div class="segmented-control-wrapper">
+                    <div class="segmented-control">
+                        <input type="radio" id="basic" name="analysis_level" value="Basic" checked>
+                        <label for="basic" class="segment">Basic</label>
+                        <input type="radio" id="advanced" name="analysis_level" value="Advanced">
+                        <label for="advanced" class="segment">Advanced</label>
+                    </div>    
+                </div>
+            </div>
+
+            <div class="step-2">
+                <div class="subheadline">Step 2: Upload Financial Documents</div>
+                <div class="body-text">Upload a 10-K so that the program can analyze how
+                    supplemental information may impact the forecast of the stock's value.</div>
+                <a class="upload-file-button">Upload <i class="fa-solid fa-upload" style="margin-left: 10px;"></i></i><span id="file-chosen">No file chosen</span></a>
+                <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+            </div>
+
+            <div class="step-3">
+                <div class="subheadline">Step 3: Run the Report</div>
+                <div class="body-text">Run the report to pull out key details from the text and classify them.
+                </div>
+                <div class="step-3-lower">
+                    <a id="run-ai-report-button" class="disabled">Run Report</a>
+                    <div id="text-for-ai-processing"></div>
+                </div>
+            </div>
+
+            <div class="step-4">
+                <div class="subheadline step-4-subheadline">
+                    <div class="step-4-left-side">View Results</div>
+                    <a id="step-4-right-side" style="display: none;">Save as PDF<i class="fa-regular fa-floppy-disk" style="margin-left: 8px;"></i></a>
+                </div>
+                <div class="body-text">View an analysis of the file</div>
+                <div id="step-4-lower">
+                    <div id="full-text">
+                        <h4 style="margin-top: 0;">Full Text</h4>
+                        <div id="full-text-html" style="color: black;"></div>
+                    </div>
+                    <div id="right-side">
+                        <h4 style="margin-top: 0;">Summary</h4>
+                        <div id="ai-summary-information">
+                            <div id="good-summary" style="color: green; padding-bottom: 1rem; line-height: 1.5rem;"></div>
+                            <div id="medium-summary" style="color: #E67E22; padding-bottom: 1rem; line-height: 1.5rem"></div>
+                            <div id="bad-summary" style="color: red; line-height: 1.5rem"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="firstLine"></div>
+
+
+    <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
